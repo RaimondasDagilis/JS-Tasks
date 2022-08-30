@@ -15,7 +15,28 @@ document
 function calculateWeight(e) {
   e.preventDefault();
   let weight = document.getElementById("search").value;
-  document.getElementById("lb").textContent = `${weight * 2.2046} lb`;
-  document.getElementById("g").textContent = `${weight / 0.001} g`;
-  document.getElementById("oz").textContent = `${weight * 35.274} oz`;
+  if (isNummber(weight)) {
+    document.getElementById("lb").textContent = `${weight * 2.2046} lb`;
+    document.getElementById("g").textContent = `${weight / 0.001} g`;
+    document.getElementById("oz").textContent = `${weight * 35.274} oz`;
+  } else {
+    alert("Only numbers are allowed!!!");
+  }
+}
+
+function isNummber(_string) {
+  let stringArray = _string.split("");
+  let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
+  let pointFound = false;
+  let result = true;
+  console.log(stringArray);
+  stringArray.forEach((element) => {
+    if (!numbers.includes(element) || (element == "." && pointFound)) {
+      result = false;
+    }
+    if (element == "." && !pointFound) {
+      pointFound = true;
+    }
+  });
+  return result;
 }
