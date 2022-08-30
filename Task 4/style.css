@@ -29,7 +29,7 @@
 }
 
 .card {
-  width: 200px;
+  width: 300px;
   background-color: rgb(234, 239, 182);
   border: 3px solid black;
   border-radius: 15px;
@@ -55,4 +55,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   row-gap: 15px;
+}
+@media screen and (min-width: 640px) {
+  .card {
+    width: 200px;
+  }
 }
