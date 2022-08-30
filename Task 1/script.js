@@ -29,12 +29,11 @@ function isNummber(_string) {
   let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
   let pointFound = false;
   let result = true;
-  console.log(stringArray);
   stringArray.forEach((element) => {
     if (!numbers.includes(element) || (element == "." && pointFound)) {
       result = false;
     }
-    if (element == "." && !pointFound) {
+    if (element == ".") {
       pointFound = true;
     }
   });
