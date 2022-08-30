@@ -15,7 +15,6 @@ fetch(ENDPOINT)
   .then((Response) => Response.json())
   .then((cars) => {
     drawCards(cars);
-    console.log(cars);
   });
 
 function drawCards(_cars) {
